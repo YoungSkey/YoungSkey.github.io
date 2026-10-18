@@ -6,6 +6,9 @@ gem "jekyll", "~> 4.3.3"
 # 解决 Sass 兼容性问题的核心
 gem "sass-embedded", "~> 1.69.5"
 
+# 解决 Faraday v2.0+ 的警告
+gem "faraday-retry"
+
 # Academic Pages 需要的插件
 group :jekyll_plugins do
   gem "jekyll-feed"
@@ -19,6 +22,7 @@ group :jekyll_plugins do
   gem "jekyll-default-layout"
   gem "jekyll-titles-from-headings"
   gem "jekyll-redirect-from"
+  gem "jemoji"  # <--- 就是这里！补上这个插件
 end
 
 # Windows 和 JRuby 兼容性支持
