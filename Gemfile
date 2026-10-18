@@ -1,14 +1,30 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
+# 使用新版 Jekyll 4
+gem "jekyll", "~> 4.3.3"
+
+# 解决 Sass 兼容性问题的核心
+gem "sass-embedded", "~> 1.69.5"
+
+# Academic Pages 需要的插件
 group :jekyll_plugins do
-  gem 'jekyll', '~> 4.4.1'
-  gem 'jekyll-feed'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-redirect-from'
-  gem 'jekyll-gist'
-  gem 'jekyll-paginate'
-  gem 'jemoji'
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-paginate"
+  gem "jekyll-gist"
+  gem "jekyll-relative-links"
+  gem "jekyll-optional-front-matter"
+  gem "jekyll-readme-index"
+  gem "jekyll-default-layout"
+  gem "jekyll-titles-from-headings"
+  gem "jekyll-redirect-from"
 end
 
-gem 'kramdown'
-gem 'kramdown-parser-gfm'
+# Windows 和 JRuby 兼容性支持
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
+end
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
